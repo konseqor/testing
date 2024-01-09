@@ -1,0 +1,16 @@
+name: testing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  testing:
+    permissions: 
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test
+        run: |
+          echo ${{ toJSON(vars) }}
